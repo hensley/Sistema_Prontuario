@@ -1,63 +1,67 @@
 package domainModel;
-import java.util.*;
+
 
 import javax.persistence.*;
 
 @Entity
-@Table (name="pessoa")
-public class pessoa {
+@Table(name="pessoa")
+public class People {
+	
+	//Atributos
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column (name="idPessoa")
+	@Column(name="idPessoa")
 	private int idPessoa;
 	
-	@Column (name="nome")
+	@Column(name="nome")
 	private String nome;
 	
-	@Column (name="rg")
+	@Column(name="rg")
 	private String rg;
-
-	@Column (name="cpf")
+	
+	@Column(name="cpf")
 	private String cpf;
 	
-	@Column (name="conselho_classe")
-	private String conselho_classe;
+	@Column(name="conselho_classe")
+	private String conselho_classe;	
+
+	@Column(name="profissao")
+	private String Profissao;
 	
-	@Column (name="logradouro")
+	@Column(name="logradouro")
 	private String logradouro;
 	
-	@Column (name="numero")
+	@Column(name="numero")
 	private String numero;
 	
-	@Column (name="complemento")
-	private String complemento;
+	@Column(name="complemento")
+	private String comeplemento;
 	
-	@Column (name="bairro")
+	@Column(name="bairro")
 	private String bairro;
 	
-	@Column (name="cidade")
+	@Column(name="cidade")
 	private String cidade;
 	
-	@Column (name="estado")
+	@Column(name="estado")
 	private String estado;
 	
-	@Column (name="telefone_fixo")
+	@Column(name="telefone_fixo")
 	private String telefone_fixo;
 	
-	@Column (name="telefone_celular")
+	@Column(name="telefone_celular")
 	private String telefone_celular;
 	
-	@Column (name="sexo")
+	@Column(name="sexo")
 	private String sexo;
 	
-	@Temporal(TemporalType.DATE)
-	
-	@Column (name="data_nascimento")
+	@Column(name="data_nascimento")
 	private String data_nascimento;
-	
-	@Column (name="profissao")
-	private String profissao;
 
+	
+	//Métodos
+	
 	public int getIdPessoa() {
 		return idPessoa;
 	}
@@ -98,6 +102,14 @@ public class pessoa {
 		this.conselho_classe = conselho_classe;
 	}
 
+	public String getProfissao() {
+		return Profissao;
+	}
+
+	public void setProfissao(String profissao) {
+		Profissao = profissao;
+	}
+
 	public String getLogradouro() {
 		return logradouro;
 	}
@@ -114,12 +126,12 @@ public class pessoa {
 		this.numero = numero;
 	}
 
-	public String getComplemento() {
-		return complemento;
+	public String getComeplemento() {
+		return comeplemento;
 	}
 
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
+	public void setComeplemento(String comeplemento) {
+		this.comeplemento = comeplemento;
 	}
 
 	public String getBairro() {
@@ -177,14 +189,6 @@ public class pessoa {
 	public void setData_nascimento(String data_nascimento) {
 		this.data_nascimento = data_nascimento;
 	}
-
-	public String getProfissao() {
-		return profissao;
-	}
-
-	public void setProfissao(String profissao) {
-		this.profissao = profissao;
-	}
 	
-	
+		
 }

@@ -1,21 +1,25 @@
 package dataAccess;
 
-import domainModel.Pessoa;
+import domainModel.People;
+
 import java.util.List;
+
 import javax.persistence.*;
 
-public class PessoaRepository {
-
+public class PeopleRepository {
+	
+	
 	private EntityManager manager;
 	private EntityManagerFactory factory;
 	private EntityTransaction transaction;
 	
-	public PessoaRepository() {
-		factory = Persistence.createEntityManagerFactory("prontuariodb"); 
-		manager = factory.createEntityManager();		
+	public PeopleRepository() {
+		factory = Persistence.createEntityManagerFactory("Prontuario"); 
+		manager = factory.createEntityManager();
+		
 	}
 	
-	public void Save(Pessoa obj) throws Exception {
+	public void Save(People obj) throws Exception {
 		try {
 			transaction = manager.getTransaction();
 			transaction.begin();
@@ -28,7 +32,7 @@ public class PessoaRepository {
 		}
 	}
 	
-	public void Delete(Pessoa obj) throws Exception {
+	public void Delete(People obj) throws Exception {
 		try {
 			transaction = manager.getTransaction();
 			transaction.begin();
@@ -41,9 +45,9 @@ public class PessoaRepository {
 		}
 	}
 	
-	public Pessoa Open(int id) throws Exception {
+	public People Open(int id) throws Exception {
 		try {
-			return manager.find(Pessoa.class, id);
+			return manager.find(People.class, id);
 		}
 		catch(Exception ex){
 			throw ex;
@@ -51,7 +55,8 @@ public class PessoaRepository {
 	}
 	
 	public List getTop10ByName() {
-		return manager.createQuery("select c from pessoa c order by c.nome").setMaxResults(15).getResultList();
+		return manager.createQuery("select c from People c order by c.nome")
+		.setMaxResults(10).getResultList();
 	}
-	
+
 }
