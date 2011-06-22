@@ -10,20 +10,29 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-    <servlet-name>register</servlet-name>
+    <servlet-name>registry</servlet-name>
     <servlet-class>presentation.PeopleController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>register</servlet-name>
-    <url-pattern>/register</url-pattern>
-  </servlet-mapping>
+    <servlet-name>registry</servlet-name>
+    <url-pattern>/registry</url-pattern>
+  </servlet-mapping>  
   
   <servlet>
-    <servlet-name>login</servlet-name>
-    <servlet-class>presentation.loginController</servlet-class>
+    <servlet-name>editingRegistry</servlet-name>
+    <servlet-class>presentation.EditingController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>login</servlet-name>
-    <url-pattern>/login</url-pattern>
-  </servlet-mapping>
+    <servlet-name>editingRegistry</servlet-name>
+    <url-pattern>/editingRegistry</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+    <servlet-name>familyRegistry</servlet-name>
+    <servlet-class>presentation.FamilyController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>familyRegistry</servlet-name>
+    <url-pattern>/familyRegistry</url-pattern>
+  </servlet-mapping> 
 </web-app>

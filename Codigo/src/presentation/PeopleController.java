@@ -10,13 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.java.swing.plaf.windows.resources.windows;
 
 import java.util.List;
 
-/**
- * Servlet implementation class PeopleController
- */
 //@WebServlet("/register")
 public class PeopleController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,8 +24,7 @@ public class PeopleController extends HttpServlet {
     public PeopleController() {    	
         super();        
         // Inicialização do repositório
-        repositorio = new PeopleRepository();
-        
+        repositorio = new PeopleRepository();        
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -66,13 +61,11 @@ public class PeopleController extends HttpServlet {
 		request.setAttribute("pessoa", pessoa);
 		
 		// Chamar a página JSP
-		RequestDispatcher listagem = request.getRequestDispatcher("register.jsp");
+		RequestDispatcher listagem = request.getRequestDispatcher("registry.jsp");
 		listagem.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
@@ -114,19 +107,9 @@ public class PeopleController extends HttpServlet {
 			
 			repositorio.Save(pessoa);
 			
-			RequestDispatcher listagem = request.getRequestDispatcher("register.jsp");
+			RequestDispatcher listagem = request.getRequestDispatcher("registry.jsp");
 			listagem.forward(request, response);			
 			
-			
-			/*// Gera uma listagem de clientes
-			List<Pessoa> clientes = repositorio.getTop10ByName();
-			
-			// Passa a listagem para a página JSP
-			request.setAttribute("clientes", clientes);
-			
-			// Chamar a página JSP
-			RequestDispatcher listagem = request.getRequestDispatcher("clientesListagem.jsp");
-			listagem.forward(request, response);*/
 		}
 		
 		catch(Exception ex){
