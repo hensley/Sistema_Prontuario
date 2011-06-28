@@ -19,17 +19,17 @@
 		
 	</head>
 	
-		<body onLoad='bemvindo()'>	
+		<body>	
 		
 		
 		<%
-			People pessoa = (People)request.getAttribute("pessoa");
+			People pessoa = (People)request.getAttribute("registry");
 		%>
-			<h1>CADASTRO</h1>			
+			<h1>CADASTRO DE FUNCIONÁRIOS</h1>			
 			<h2>DADOS PESSOAIS</h2>	
 			 			
 			
-			<form name="form1" action="/Prontuario/register" method="post">
+			<form action="/Prontuario/registry" method="post">
 			
 				<table border="0" width="960">
 					<tr>
