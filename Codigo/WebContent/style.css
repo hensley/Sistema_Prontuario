@@ -1,0 +1,24 @@
+body {
+		background: #F8F8FF;
+		text-align: center;		 
+ }
+table{
+		background: #B2DFEE;
+		text-align: center;
+}
+ 
+ 
+h1 {
+		color: #000000;
+		background-color: #B2DFEE;
+		font: arial small-caps; font-style:italic;		
+	}
+	
+h2{
+		color: #000000;
+		font: arial small-caps; font-style:italic;
+		font-size: 20px;		
+		text-align: center;	
+		
+	}
+	
