@@ -1,7 +1,7 @@
 package presentation;
 
-import domainModel.People;
-import dataAccess.PeopleRepository;
+import domainModel.Pessoa;
+import dataAccess.PessoaRepository;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -12,15 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.util.List;
 
-public class EditingController extends HttpServlet{
+public class EditarController extends HttpServlet{
 
-	PeopleRepository repositorio;
+	PessoaRepository repositorio;
 	
 	// Construtor do servlet
-    public EditingController() {    	
+    public EditarController() {    	
         super();        
         // Inicialização do repositório
-        repositorio = new PeopleRepository();        
+        repositorio = new PessoaRepository();        
     }
     
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,7 +33,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			if(!edit.equalsIgnoreCase("new")){
 				try {
 					// Carrega o cliente do BD 
-					People pessoa = repositorio.Open(Integer.parseInt(edit));
+					Pessoa pessoa = repositorio.Open(Integer.parseInt(edit));
 					
 					// Passa o cliente para a página JSP 
 					request.setAttribute("pessoa", pessoa);
@@ -46,13 +46,13 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		}
 		
 		// Gera uma listagem de clientes
-		List<People> pessoa = repositorio.getTop10ByName();
+		List<Pessoa> pessoa = repositorio.getTop10ByName();
 		
 		// Passa a listagem para a página JSP
 		request.setAttribute("pessoa", pessoa);
 		
 		// Chamar a página JSP
-		RequestDispatcher listagem = request.getRequestDispatcher("editingRegistry.jsp");
+		RequestDispatcher listagem = request.getRequestDispatcher("editarCadastro.jsp");
 		listagem.forward(request, response);
 	}
 
@@ -60,13 +60,13 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 	
 	try {
 		
+		String id =request.getParameter("idPessoa");
 		
-		String id =request.getParameter("idPessoa");		
-		People pessoa=repositorio.Open(Integer.parseInt(id));
+		Pessoa pessoa=repositorio.Open(Integer.parseInt(id));
+				
+		request.setAttribute("pessoas", pessoa);
 		
-		request.setAttribute("pessoa", pessoa);
-		
-		RequestDispatcher listagem = request.getRequestDispatcher("registry.jsp");
+		RequestDispatcher listagem = request.getRequestDispatcher("editarCadastro.jsp");
 		listagem.forward(request, response);
 	}
 	

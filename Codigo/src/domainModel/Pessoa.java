@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="pessoa")
-public class People {
+public class Pessoa {
 	
 	//Atributos
 	
@@ -59,9 +59,10 @@ public class People {
 	@Column(name="data_nascimento")
 	private String data_nascimento;
 
-	
+		
 	//Métodos
 	
+
 	public int getIdPessoa() {
 		return idPessoa;
 	}

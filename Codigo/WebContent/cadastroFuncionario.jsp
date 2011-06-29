@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-<%@ page import="domainModel.People" %>
+<%@ page import="domainModel.Pessoa" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,29 +13,29 @@
 		
 		<SCRIPT LANGUAGE='Javascript'>		
 			function bemvindo() {
-				window.alert("Bem-vindo ao Sistema de Prontuario");
+				window.alert("Registro de Funcionarios");
 			}
 		</SCRIPT>	
 		
 	</head>
 	
-		<body>	
+		<body onLoad=bemvindo()>	
 		
 		
 		<%
-			People pessoa = (People)request.getAttribute("registry");
+			Pessoa pessoa = (Pessoa)request.getAttribute("pessoas");
 		%>
 			<h1>CADASTRO DE FUNCIONÁRIOS</h1>			
 			<h2>DADOS PESSOAIS</h2>	
 			 			
 			
-			<form action="/Prontuario/registry" method="post">
+			<form action="/Prontuario/cadastroFuncionario" method="post">
 			
 				<table border="0" width="960">
 					<tr>
 						 <td>
 						  Nome: <br/>
-						  <input type="text" name="nome" size="120" maxlength="150"/>
+						  <input type="text" name="nome" size="120" maxlength="150" value=<%if(pessoa!=null){out.print(pessoa.getNome());} %>/>
 						 </td>
 						
 					</tr>
@@ -47,11 +47,11 @@
 				<tr>
 					<td>
 					  Identidade: <br/>
-					  <input type="text" name="rg" size="40" maxlength="150"/>
+					  <input type="text" name="rg" size="40" maxlength="150" value=<%if(pessoa!=null){out.print(pessoa.getRg());} %>/>
 					</td>
 				     <td>
 					  CPF: <br/>
-					   <input type="text" name="cpf" size="40" maxlength="150"/>
+					   <input type="text" name="cpf" size="40" maxlength="150" value=<%if(pessoa!=null){out.print(pessoa.getCpf());} %>/>
 					 </td>
 					 
 				</tr>
@@ -64,7 +64,7 @@
 					<td>
 					  Profissao: <br/>
 					   <select  name="profissao">	
-							<option value="VAZIO" selected="selected">selecione</option>
+							<option value="VAZIO" selected=<%if(pessoa!=null){out.print(pessoa.getProfissao());}else{out.println("VAZIO");} %>">selecione</option>
 							<option value="Medico(a)">MEDICO</option>
 							<option value="Enfermeiro(a)">ENFERMEIRO</option>
 							<option value="Agente">AGENTE DE SAÚDE</option>
@@ -77,18 +77,18 @@
 				<tr>
 				     <td>
 					  Tel. Fixo: <br/>
-					   <input type="text" name="telefone_fixo" size="40" maxlength="150"/>
+					   <input type="text" name="telefone_fixo" size="40" maxlength="150" value=<%if(pessoa!=null){out.print(pessoa.getTelefone_fixo());} %>/>
 					 </td>
 					 <td>
 					  Tel. Celular: <br/>
-					   <input type="text" name="telefone_celular" size="40" maxlength="150"/>
+					   <input type="text" name="telefone_celular" size="40" maxlength="150" value=<%if(pessoa!=null){out.print(pessoa.getTelefone_celular());} %>/>
 					 </td>
 				</tr>	
 				
 				<tr>
 					<td>
 					  Data Nascimento: <br/>
-					   <input type="text" name="data_nascimento" size="40" maxlength="100"/>
+					   <input type="text" name="data_nascimento" size="40" maxlength="100" value=<%if(pessoa!=null){out.print(pessoa.getData_nascimento());} %>/>
 					</td>
 				     <td>
 					  Sexo: <br/>
@@ -109,28 +109,28 @@
 					<tr>
 						<td>
 						  Logradouro: <br/>
-						   <input type="text" name="logradouro" size="40" maxlength="150"/>
+						   <input type="text" name="logradouro" size="40" maxlength="150"value=<%if(pessoa!=null){out.print(pessoa.getLogradouro());} %>/>
 						</td>
 						<td>
 						  Bairro: <br/>
-						   <input type="text" name="bairro" size="40" maxlength="150"/>
+						   <input type="text" name="bairro" size="40" maxlength="150" value=<%if(pessoa!=null){out.print(pessoa.getBairro());} %>/>
 						</td>
 					</tr>
 					<tr>
 						<td>
 						  Numero: <br/>
-						   <input type="text" name="numero" size="40" maxlength="150"/>
+						   <input type="text" name="numero" size="40" maxlength="150" value=<%if(pessoa!=null){out.print(pessoa.getNumero());} %>/>
 						</td>
 						<td>
 						  Complemento: <br/>
-						   <input type="text" name="complemento" size="40" maxlength="150"/>
+						   <input type="text" name="complemento" size="40" maxlength="150" value=<%if(pessoa!=null){out.print(pessoa.getComeplemento());} %>/>
 						</td>					
 					</tr>
 					
 					<tr>
 					<td>
 						  Cidade: <br/>
-						   <input type="text" name="cidade" size="40" maxlength="150"/>
+						   <input type="text" name="cidade" size="40" maxlength="150" value=<%if(pessoa!=null){out.print(pessoa.getCidade());} %>/>
 						</td>
 						<td>
 						   Estado: <br/>

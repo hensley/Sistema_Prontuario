@@ -1,25 +1,25 @@
 package dataAccess;
 
-import domainModel.Family;
+import domainModel.Paciente;
 
 import java.util.List;
 
 import javax.persistence.*;
 
-public class FamilyRepository {
+public class PacienteRepository {
 	
 	
 	private EntityManager manager;
 	private EntityManagerFactory factory;
 	private EntityTransaction transaction;
 	
-	public FamilyRepository() {
+	public PacienteRepository() {
 		factory = Persistence.createEntityManagerFactory("Prontuario"); 
 		manager = factory.createEntityManager();
 		
 	}
 	
-	public void Save(Family obj) throws Exception {
+	public void Save(Paciente obj) throws Exception {
 		try {
 			transaction = manager.getTransaction();
 			transaction.begin();
@@ -32,7 +32,7 @@ public class FamilyRepository {
 		}
 	}
 	
-	public void Delete(Family obj) throws Exception {
+	public void Delete(Paciente obj) throws Exception {
 		try {
 			transaction = manager.getTransaction();
 			transaction.begin();
@@ -45,9 +45,9 @@ public class FamilyRepository {
 		}
 	}
 	
-	public Family Open(int id) throws Exception {
+	public Paciente Open(int id) throws Exception {
 		try {
-			return manager.find(Family.class, id);
+			return manager.find(Paciente.class, id);
 		}
 		catch(Exception ex){
 			throw ex;
@@ -55,7 +55,7 @@ public class FamilyRepository {
 	}
 	
 	public List getTop10ByName() {
-		return manager.createQuery("select c from familia c order by c.idfamilia")
+		return manager.createQuery("select c from Pessoa c order by c.nome")
 		.setMaxResults(10).getResultList();
 	}
 

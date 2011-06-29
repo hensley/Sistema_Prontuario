@@ -1,7 +1,7 @@
 package presentation;
 
-import domainModel.Family;
-import dataAccess.FamilyRepository;
+import domainModel.Familia;
+import dataAccess.FamiliaRepository;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.util.List;
 
-public class FamilyController extends HttpServlet{
+public class FamiliaController extends HttpServlet{
 	
-FamilyRepository repositorio;
+FamiliaRepository repositorio;
 	
-    public FamilyController() {    	
+    public FamiliaController() {    	
         super();        
-        repositorio = new FamilyRepository();        
+        repositorio = new FamiliaRepository();        
     }
     
     
@@ -30,7 +30,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			if(!edit.equalsIgnoreCase("new")){
 				try {
 										// Carrega o cliente do BD 
-					Family familia = repositorio.Open(Integer.parseInt(edit));
+					Familia familia = repositorio.Open(Integer.parseInt(edit));
 					
 					// Passa o cliente para a página JSP 
 					request.setAttribute("familia", familia);
@@ -43,7 +43,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			
 		}
 		
-		RequestDispatcher listagem = request.getRequestDispatcher("familyRegistry.jsp");
+		RequestDispatcher listagem = request.getRequestDispatcher("cadastroFamilia.jsp");
 		listagem.forward(request, response);
 	}
 
@@ -51,7 +51,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	try {	
-		Family familia=new Family();
+		Familia familia=new Familia();
 		
 		String logradouro = request.getParameter("logradouro");
 		String bairro = request.getParameter("bairro");
@@ -71,7 +71,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		
 		repositorio.Save(familia);		
 				
-		RequestDispatcher listagem = request.getRequestDispatcher("familyRegistry.jsp");
+		RequestDispatcher listagem = request.getRequestDispatcher("cadastroFamilia.jsp");
 		listagem.forward(request, response);
 	}
 	

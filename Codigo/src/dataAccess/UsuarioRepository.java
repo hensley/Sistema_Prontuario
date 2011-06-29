@@ -1,25 +1,25 @@
 package dataAccess;
 
-import domainModel.User;
+import domainModel.Usuario;
 
 import java.util.List;
 
 import javax.persistence.*;
 
-public class UserRepository {
+public class UsuarioRepository {
 	
 	
 	private EntityManager manager;
 	private EntityManagerFactory factory;
 	private EntityTransaction transaction;
 	
-	public UserRepository() {
+	public UsuarioRepository() {
 		factory = Persistence.createEntityManagerFactory("Prontuario"); 
 		manager = factory.createEntityManager();
 		
 	}
 	
-	public void Save(User obj) throws Exception {
+	public void Save(Usuario obj) throws Exception {
 		try {
 			transaction = manager.getTransaction();
 			transaction.begin();
@@ -32,7 +32,7 @@ public class UserRepository {
 		}
 	}
 	
-	public void Delete(User obj) throws Exception {
+	public void Delete(Usuario obj) throws Exception {
 		try {
 			transaction = manager.getTransaction();
 			transaction.begin();
@@ -45,9 +45,9 @@ public class UserRepository {
 		}
 	}
 	
-	public User Open(int id) throws Exception {
+	public Usuario Open(int id) throws Exception {
 		try {
-			return manager.find(User.class, id);
+			return manager.find(Usuario.class, id);
 		}
 		catch(Exception ex){
 			throw ex;

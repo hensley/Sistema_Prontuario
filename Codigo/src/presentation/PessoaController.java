@@ -1,7 +1,7 @@
 package presentation;
 
-import domainModel.People;
-import dataAccess.PeopleRepository;
+import domainModel.Pessoa;
+import dataAccess.PessoaRepository;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -14,17 +14,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 //@WebServlet("/register")
-public class PeopleController extends HttpServlet {
+public class PessoaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     // Declaração do repositório
-	PeopleRepository repositorio;
+	PessoaRepository repositorio;
 	
 	// Construtor do servlet
-    public PeopleController() {    	
+    public PessoaController() {    	
         super();        
         // Inicialização do repositório
-        repositorio = new PeopleRepository();        
+        repositorio = new PessoaRepository();        
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,7 +37,7 @@ public class PeopleController extends HttpServlet {
 			if(!edit.equalsIgnoreCase("new")){
 				try {
 										// Carrega o cliente do BD 
-					People pessoa = repositorio.Open(Integer.parseInt(edit));
+					Pessoa pessoa = repositorio.Open(Integer.parseInt(edit));
 					
 					// Passa o cliente para a página JSP 
 					request.setAttribute("pessoa", pessoa);
@@ -55,13 +55,13 @@ public class PeopleController extends HttpServlet {
 		}
 		
 		// Gera uma listagem de clientes
-		List<People> pessoa = repositorio.getTop10ByName();
+		List<Pessoa> pessoa = repositorio.getTop10ByName();
 		
 		// Passa a listagem para a página JSP
 		request.setAttribute("pessoa", pessoa);
 		
 		// Chamar a página JSP
-		RequestDispatcher listagem = request.getRequestDispatcher("registry.jsp");
+		RequestDispatcher listagem = request.getRequestDispatcher("cadastroFuncionario.jsp");
 		listagem.forward(request, response);
 	}
 
@@ -70,7 +70,7 @@ public class PeopleController extends HttpServlet {
 		
 		try {
 			// Recebe os parâmetros do formulário			
-			People pessoa = new People();
+			Pessoa pessoa = new Pessoa();
 			
 			String nome = request.getParameter("nome");
 			String rg = request.getParameter("rg");
@@ -107,7 +107,7 @@ public class PeopleController extends HttpServlet {
 			
 			repositorio.Save(pessoa);
 			
-			RequestDispatcher listagem = request.getRequestDispatcher("registry.jsp");
+			RequestDispatcher listagem = request.getRequestDispatcher("cadastroFuncionario.jsp");
 			listagem.forward(request, response);			
 			
 		}

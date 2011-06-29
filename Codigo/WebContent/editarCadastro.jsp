@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="domainModel.People, java.util.List" %>
+<%@ page import="domainModel.Pessoa,java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,7 +11,7 @@
 </head>
 <body>
 		<%
-			People pessoa = (People)request.getAttribute("registry");
+			Pessoa pessoa = (Pessoa)request.getAttribute("pessoas");
 		%>
 			<h1>EDITAR CADASTRO</h1>
 			<form action="/Prontuario/editingRegistry" method="post">
@@ -20,31 +20,19 @@
 						<tr>
 							 <td>
 							  Código do Funcionario: <br/>
-							  <input type="text" name="idPessoa" size="20" maxlength="20"/>
+							  <input type="text" name="idPessoa" size="20" maxlength="20" />							  
 							 </td>
 							
 						</tr>
 						<tr>
 							<td>
-							<input type="submit" name="EnviarConsulta" size="20" maxlength="20"/>
+							<input type="submit" name="EnviarConsulta" size="20" maxlength="20" />
 							</td>
 						</tr>
 				</table>
 				
 				<br/>
-				<br/>
-				<table>
-						<tr>
-							<td>
-								Nome:
-							</td>
-							<td>
-								<input type="text" name="nome" value="<% if(pessoa != null) { 
-																				out.print(pessoa.getNome()); 
-																		} %>" />
-							</td>
-						</tr>
-				</table>
+				<br/>			
 				
 			<form/>		
 			
