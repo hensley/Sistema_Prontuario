@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Prontuario</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>cadastroFuncionario</servlet-name>
+    <servlet-class>presentation.PessoaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cadastroFuncionario</servlet-name>
+    <url-pattern>/cadastroFuncionario</url-pattern>
+  </servlet-mapping>  
+  
+  <servlet>
+    <servlet-name>editarCadastro</servlet-name>
+    <servlet-class>presentation.EditarController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>editarCadastro</servlet-name>
+    <url-pattern>/editarCadastro</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+    <servlet-name>cadastroFamilia</servlet-name>
+    <servlet-class>presentation.FamiliaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cadastroFamilia</servlet-name>
+    <url-pattern>/cadastroFamilia</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+    <servlet-name>cadastro</servlet-name>
+    <servlet-class>presentation.CadastroController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cadastro</servlet-name>
+    <url-pattern>/cadastro</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>cadastroPaciente</servlet-name>
+    <servlet-class>presentation.PacienteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cadastroPaciente</servlet-name>
+    <url-pattern>/cadastroPaciente</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>busca</servlet-name>
+    <servlet-class>presentation.BuscaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>busca</servlet-name>
+    <url-pattern>/busca</url-pattern>
+  </servlet-mapping>
+</web-app>
