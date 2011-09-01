@@ -1,0 +1,35 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SECRETARIA MUNICIPAL DE SAÚDE - NINHEIRA</title>
+<link href="geral5.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="geral">
+	
+    <div id="topo">
+    <img src="imagens/topo completo.gif" width="894" height="152" alt="imagem topo" />
+    </div>
+    
+    <div id="menu">
+    
+        <div id="menu_geral">
+        	<ul>
+            	<li><a href="#">Cadastros</a></li>
+                <li><a href="#">Consultas</a></li>
+                <li><a href="#">Exames</a></li>
+                <li><a href="#">Relatorios</a></li>
+            </ul>
+ 
+        </div>
+        
+        <div id="menu_login_posto">
+        </div>
+        
+        <div id="menu_login">
+        </div>
+        
+    </div>
+

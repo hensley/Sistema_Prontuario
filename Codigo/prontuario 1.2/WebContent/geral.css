@@ -1,0 +1,50 @@
+#geral {
+	padding: 3px;
+	width: 894px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#geral #menu {
+	height: 50px;
+	width: 894px;
+	background-image: url(imagens/menugeral.jpg);
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#geral #geral_conteudo {
+	height: 700px;
+}
+
+
+#geral #geral_conteudo img {
+	border: 0px none #000;
+	float: left;
+	margin-top: 100px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 100px;
+}
+#geral #geral_conteudo #geral_login {
+	text-align: right;
+	width: 200px;
+	height: 0px;
+	float: left;
+	padding: 5px;
+	margin-top: 170px;
+	margin-left: 170px;
+}
+
+#geral #rodape {
+	background-image: url(imagens/rodape.jpg);
+	text-align: center;
+	height: 30px;
+	float: none;
+}

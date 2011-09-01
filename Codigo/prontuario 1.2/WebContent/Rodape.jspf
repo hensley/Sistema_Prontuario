@@ -1,0 +1,7 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<div id="rodape">
+    ® Todos os direitos reservados ©
+    </div>
+    
+</div>
