@@ -1,0 +1,7 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+ 
+                <form action="/consultas" method="post">
+                <p><h1 align="center">EM MANUTENÇÃO</h1></p>
+			<form>

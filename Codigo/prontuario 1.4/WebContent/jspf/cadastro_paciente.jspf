@@ -1,0 +1,56 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%@ page import="domainModel.Paciente" %>
+ <div id="cadastro_paciente">
+     <%
+			Paciente paciente = (Paciente)request.getAttribute("cadastro_paciente");
+		%>
+                <form action="/cadastro_paciente" method="post">
+                <p><h1 align="center">Cadastro de Paciente</h1></p>
+			<form>
+                <table width="80%" height="300px" border="0" align="center">
+                    
+                    
+                      <tr>
+                        <td align="right">Nome:</td>
+                        <td><input type="text" name="nome" id="nome" /></td>
+                        <td align="right">Data de Nascimento:</td>
+                        <td><input type="text" name="data_nascimento" id="data_nascimento" /></td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="right">Idade:</td>
+                        <td><input type="text" name="idade" id="idade" /></td>
+                        <td align="right">Profissao:</td>
+                        <td><input type="text" name="profissao" id="profissao" /></td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="right">Sexo:</td>
+                        <td>
+                        <input type="radio" name="sexo" value="Masculino" />Masculino<br />
+                		<input type="radio" name="sexo" value="Feminino" />Feminino<br />
+                		</td>
+                       
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><p>&nbsp;
+                          </p>
+                          <p>&nbsp;</p>
+                          <p>
+                            <input type="reset" name="limpar" id="limpar" value="Limpar Formulario" />
+                        </p></td>
+                        <td><p>&nbsp;
+                          </p>
+                          <p>&nbsp;</p>
+                          <p>
+                            <input type="submit" name="Save"  value="Salvar" />
+                        </p></td>
+                      </tr>
+                    </table>
+                 </form>
+              </div>  

@@ -1,0 +1,203 @@
+﻿#---------------------------------CONFIGURAÇOES GERAIS---------------------------------------------{
+}
+#fundo_pagina {
+	background-color: #FFF;
+	margin: 0px;
+}
+#geral {
+	background-color: #fff;
+	margin-top: -5px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	width: 1000px;
+	height: 900px;
+}
+
+#---------------------------------TOPO-------------------------------------------------------------{
+}
+
+#geral #topo {
+	height: 200px;
+	width: 998px;
+}
+#geral #topo #menu {
+	background-image: url(imagens/topo_com_menu.gif);
+	height: 200px;
+	margin: 0px;
+	float: left;
+	width: 998px;
+}
+
+
+#geral #topo #menu_completo{
+	width:1000px; 
+	margin-top: 160px;
+	margin-left: 18px;
+}
+
+#geral #topo #menu_completo ul {
+  list-style:none;
+  padding:0px;
+  margin:0px
+}
+
+#geral #topo #menu_completo ul li {
+  display:inline;
+  float:left;
+}
+
+#geral #topo #menu_completo ul li a {
+	color:#ffffff;
+	margin-right:5px;
+	font-weight:bold;
+	font-size:16px;
+	font-family:Verdana, Geneva, sans-serif;
+	text-decoration:none;
+	display:block;
+	width:100px;
+	height:35px;
+	line-height:35px;
+	text-align:center;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border: 1px solid #06F;
+	background-color: #5FBFFF;
+}
+
+#geral #topo #menu_completo ul li a:hover {
+	color:#cccccc;
+	font-weight:bold;
+	text-decoration:none;
+	display:block;
+	width:100px;
+	text-align:center;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border: 1px solid #000000;
+	background-color: #0053CE;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+#geral #topo #menu_completo ul li.sublinks a {
+	color:#000000;
+	background:#f6f6f6;
+	font-weight:normal;
+	text-decoration:none;
+	display:block;
+	width:100px;
+	text-align:center;
+	margin-top:2px;
+}
+
+#geral #topo #menu_completo ul li.sublinks a:hover {
+	color:#000000;
+	font-weight:normal;
+	text-decoration:none;
+	display:block;
+	width:100px;
+	text-align:center;
+	background-color: #0CF;
+}
+
+#geral #topo #menu_completo ul li.sublinks {
+	display:none;
+}
+#geral #topo #menu #menu_completo #menu_relatorios ul li.sublinks a {
+	color:#000000;
+	background:#f6f6f6;
+	font-weight:normal;
+	text-decoration:none;
+	display:block;
+	width:300px;
+	text-align:center;
+	margin-top:2px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+
+#geral #topo #menu #menu_completo #menu_relatorios ul li.sublinks a:hover {
+	color:#000000;
+	font-weight:normal;
+	text-decoration:none;
+	display:block;
+	width:300px;
+	text-align:center;
+	background-color: #0CF;
+}
+#fundo_pagina #geral #topo #menu #menu_posto {
+	height: 35px;
+	width: 200px;
+	float: left;
+	margin-left: 110px;
+	background-color: #06F;
+}
+#geral #topo #menu #menu_login {
+	background-color: #005CE7;
+	height: 35px;
+	width: 200px;
+	float: left;
+	margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#---------------------------------CONTEUDO---------------------------------------------------------{
+}
+
+
+#geral #conteudo {
+	background-image: url(imagens/meio_conteudo.gif);
+	background-repeat: repeat-y;
+	height: 500px;
+	margin-top: 5px;
+}
+#geral #conteudo #login_inicial img {
+	float: left;
+	margin-top: 30px;
+	margin-left: 150px;
+}
+#geral #conteudo #login_inicial form {
+	float: left;
+	margin-top: 170px;
+	margin-left: 230px;
+	width: 200px;
+}
+
+
+
+#---------------------------------RODAPE-----------------------------------------------------------{
+}
+#geral #rodape {
+	background-image: url(imagens/rodape.gif);
+	float: left;
+	text-align: center;
+	height: 44px;
+	width: 998px;
+	line-height: 44px;
+}
