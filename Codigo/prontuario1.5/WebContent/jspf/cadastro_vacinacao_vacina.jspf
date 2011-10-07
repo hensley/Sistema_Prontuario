@@ -1,0 +1,52 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+ <%@ page import="domainModel.Vacina" %>
+
+     <%
+			Vacina vacina = (Vacina)request.getAttribute("cadastro_vacinacao_vacina");
+		%>
+<form action="/vacina" method="post">
+<table width="800" border="0">
+  <tr>
+    <td>Filho:</td>
+    <td><select id="filho"name="filho">
+        <option value="filho 1">filho 1</option>
+  		<option value="filho 2">2</option>
+        <option value="filho 3">3</option>
+        </select>
+    </td>
+  </tr>
+</table>
+<table width="800" border="0">
+  <tr>
+    <td>Tipo da Vacina:</td>
+    <td><select id="tipo_vacina"name="tipo_vacina">
+        <option value="tipo 1">1</option>
+  		<option value="tipo 2">2</option>
+        <option value="tipo 3">3</option>
+        </select>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Data da aplicação:</td>
+    <td><input type="text" name="data_aplicacao" id="data_aplicacao" /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Funcionario responsavel</td>
+    <td><select id="funcionario_responsavel"name="funcionario_responsavel">
+        <option value="1">1</option>
+  		<option value="2">2</option>
+        <option value="3">3</option>
+        </select>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+     <td><input type="submit" name="Save"  value="Salvar" /></td>
+  </tr>
+</table>
+</form>

@@ -1,0 +1,29 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+			<div id="abas_vacinacao_cadastrocrianca_vacina">
+						<ul>
+                                                     <li><a href="#cadastro_crianca">Cadastro de Crianças</a></li>
+                                                     <li><a href="#vacinas">Vacinas</a></li>
+						</ul>
+     
+			<div id="cadastro_crianca">  
+                            <div>
+                                <h3><a href="#">Cadastro de Crianças</a></h3>
+                                <div>
+                                     <%@include  file="pesquisa_cpf.jspf" %>
+                                     <%@include  file="cadastro_vacinacao_crianca.jspf" %>
+                                </div>
+                            </div>
+                       </div>
+						 
+			<div id="vacinas"> 
+                            <div>
+                                <h3><a href="#">Vacina</a></h3>
+                                <div> 
+                                     <%@include  file="pesquisa_cpf.jspf" %>
+                                     <%@include  file="cadastro_vacinacao_vacina.jspf" %>
+                                 </div>
+                            </div>
+			</div>			 
+</div>
+

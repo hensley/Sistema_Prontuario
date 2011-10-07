@@ -1,0 +1,18 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+    <form action="/gestacao_consultas" method="post">
+                                <table width="800" border="0" align="center">
+                                  <tr>
+                                    <td width="104">Busca por CPF:</td>
+                                    <td width="149"><input type="text" name="cpf" id="cpf" /></td>
+                                    <td width="533"><input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar" /></td>
+                                 
+                                  </tr>
+                                </table>	
+                                <table width="800" border="0" align="center">
+                                  <tr>
+                                    <td width="117">Nome do paciente:</td>
+                                    <td width="673"><input name="nome" type="text" id="nome" value="<% //if(familia.getNome() != null){ out.println(familia.getNome());} %>"  readonly="readonly" /></td>
+                                  </tr>
+                                </table>
+        </form>

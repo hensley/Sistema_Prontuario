@@ -1,0 +1,48 @@
+ <%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%@ page import="domainModel.Crianca" %>
+
+     <%
+			Crianca crianca = (Crianca)request.getAttribute("cadastro_vacinacao_crianca");
+		%>
+<form action="/vacinacao_crianca" method="post">
+<table width="800" border="0">
+  <tr>
+    <td>Nome da criança:</td>
+    <td><input type="text" name="nome_crianca" id="nome_crianca" /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Data de nascimento:</td>
+    <td><input type="text" name="data_nascimento_crianca" id="data_nascimento_crianca" /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Sexo:</td>
+    <td><input type="radio" name="sexo_crianca" id="sexo" value="masculino" />Masculino <br />
+    	<input type="radio" name="sexo_crianca" id="sexo" value="feminino" />Feminino
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Peso:</td>
+    <td><input type="text" name="peso" id="peso" /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Altura:</td>
+    <td><input type="text" name="altura" id="altura" /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Data do cadastro:</td>
+    <td><input type="text" name="data_cadastro" id="data_cadastro" /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="Save"  value="Salvar" /></td>
+  </tr>
+</table>
+</form>    

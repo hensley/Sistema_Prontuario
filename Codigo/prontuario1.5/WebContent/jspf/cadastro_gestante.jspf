@@ -1,0 +1,67 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%@ page import="domainModel.Gestante" %>
+ <div id="cadastro_paciente">
+     <%
+			Gestante gestante = (Gestante)request.getAttribute("cadastro_gestante");
+		%>
+                <form action="/cadastro_gestante" method="post">
+                <p><h1 align="center">Cadastro de Gestante </h1></p>
+			<form>
+                <table width="80%" height="300px" border="0" align="center">
+                    
+                    
+                  <tr>
+                        <td align="right">Recen Nascido:</td>
+                        <td><input type="radio" name="recen" id="recen" value="sim" />Sim <br />
+                        <input type="radio" name="recen" id="recen" value="nao" />Não
+                        </td>
+                        <td align="right">Aborto:</td>
+                        <td><input type="radio" name="aborto" id="aborto" value="sim" />Sim <br />
+                        <input type="radio" name="aborto" id="aborto" value="nao" />Não
+                        <td align="right">Estado Civil:</td>
+                        <td><input type="text" name="estadocivil" id="estadocivil" /></td>
+                        <td>&nbsp;</td>   
+                 </tr>
+                     
+                  <tr>
+                        
+                        <td align="right">Ultimo dia de Menstruacao:</td>
+                        <td><input type="text" name="dum" id="dum" /></td>
+                        <td align="right">Data Provavel do Parto:</td>
+                        <td><input type="text" name="dpp" id="dpp" /></td>
+                  
+                       
+                        
+                      
+                  </tr>
+                        <td align="right">Paciente:</td>
+                        <td><input type="text" name="paciente" id="paciente" /></td>
+                        <td align="right">Gestacao Anterior:</td>
+                        <td><input type="radio" name="gestacaoant" id="gestacaoant" value="sim" />Sim <br />
+                        <input type="radio" name="gestacaoant" id="gestacaoantt" value="nao" />Não
+                  <tr>
+                        
+                        
+                  </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><p>&nbsp;
+                          </p>
+                          <p>&nbsp;</p>
+                          <p>
+                            <input type="reset" name="limpar" id="limpar" value="Limpar Formulario" />
+                        </p></td>
+                        <td><p>&nbsp;
+                          </p>
+                          <p>&nbsp;</p>
+                          <p>
+                            <input type="submit" name="Save"  value="Salvar" />
+                        </p></td>
+                      </tr>
+                    </table>
+                 </form>
+              </div>  
+

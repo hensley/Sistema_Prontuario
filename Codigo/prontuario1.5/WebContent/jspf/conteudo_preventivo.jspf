@@ -1,0 +1,24 @@
+<%-- 
+    Document   : conteudo_preventivo
+    Created on : 05/10/2011, 18:13:27
+    Author     : Pablo
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<div id="abas_preventivo">
+	<ul>
+            <li><a href="#cadastro_coleta">Cadastros</a></li>
+	</ul>
+     
+	<div id="cadastro_coleta">  
+            <div>
+                 <h3><a href="#">Cadastro de Coleta</a></h3>
+                 <div>
+                     <%@include  file="pesquisa_cpf.jspf" %>
+                     <%@include  file="cadastro_preventivo_coleta.jspf" %>
+                 </div>
+            </div>
+        </div>
+						 
+</div>

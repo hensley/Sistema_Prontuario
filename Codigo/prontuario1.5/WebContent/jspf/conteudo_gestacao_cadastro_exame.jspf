@@ -1,0 +1,49 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%@ page import="domainModel.Exame" %>
+<div id="exame">
+     <%
+			Exame exame = (Exame)request.getAttribute("conteudo_gestacao_cadastro_exame");
+		%>
+       <form action="/gestacao_exames" method="post">
+                <table width="800" border="0" align="center">
+                                  <tr>
+                                    <td width="107">Data do exame:</td>
+                                    <td width="148"><input type="text" name="data_exame" id="data_exame" /></td>
+                                    <td width="114">Tipo de exame:</td>
+                                    <td width="143"><select id="tipo_exame" name="tipo_exame">
+                                                        <option value="ABO-RH">ABO-RH</option>
+                                                        <option value="ANTI-HIV">ANTI-HIV</option>
+                                                        <option value="COMBS.INDIRETO">COMBS.INDIRETO</option>
+                                                        <option value="GLICEMIA DE JEJUM">GLICEMIA DE JEJUM</option>
+                                                        <option value="HB/HT">HB/HT</option>
+                                                        <option value="HBsAG">HBsAG</option>
+                                                        <option value="TOXOPLASMOSE">TOXOPLASMOSE</option>
+                                                        <option value="ULTRASONOGRAFIA">ULTRASONOGRAFIA</option>
+                                                        <option value="URINA 1">URINA 1</option>
+                                                        <option value="VDRL">VDRL</option>
+                                                    </select>
+                                    </td>
+                                    <td width="50">Laboratorio:</td>
+                                    <td width="212"><select id="laboratorio" name="laboratorio">
+                                    					<option value="sao geraldo">sao geraldo</option>
+                                                        <option value="sao jose">sao jose</option>
+                                                        <option value="sao matheus">sao matheus</option>
+                                                        <option value="sao joao">sao joao</option>
+                                                        <option value="sao pedro">sao pedro</option>
+                                                        <option value="santo antonio">santo antonio</option>
+                                                        </select> </td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td><br />
+                                    	<br />
+                                        <br />
+                                    			<input type="reset" name="limpar_formulario" id="limpar_formulario" value="Limpar Formulario" />     
+                                                        <input type="submit" name="Save"  value="Salvar" />
+                                  </tr>
+                                </table>

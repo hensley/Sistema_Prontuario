@@ -1,0 +1,52 @@
+
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%@ page import="domainModel.Consulta" %>
+<%@ page import="domainModel.Exame" %>
+<%@ page import="domainModel.Familia" %>
+<% 
+Familia familia = new Familia();
+if(request.getAttribute("familia") != null){
+    familia = (Familia) request.getAttribute("familia");
+    out.println(familia.getNome());
+ }
+%>
+   
+                
+<div id="abas_gestacao_cadastro_consultas_exames">
+	<ul>
+            <li><a href="#gestacao_cadastros">Cadastros</a></li>
+            <li><a href="#gestacao_consultas">Consultas</a></li>
+            <li><a href="#gestacao_exames">Exames</a></li>
+        </ul>
+        
+			<div id="gestacao_cadastros">  
+                            <div>
+                                <h3><a href="#">Cadastro de Gestante</a></h3>
+                                <div>
+                                    <%@include  file="cadastro_gestante.jspf" %>
+                                </div>
+                            </div>
+                         </div>
+						 
+			<div id="gestacao_consultas"> 
+                            <div>
+                                <h3><a href="#">Cadastro de Consultas</a></h3>
+                                <div>
+                                    <%@include  file="pesquisa_cpf.jspf" %>
+                                    <%@include  file="conteudo_gestacao_cadastro_consulta.jspf" %>
+                                </div>
+                            </div>
+                          </div>
+			<div id="gestacao_exames"> 
+                            <div>
+                                <h3><a href="#">Cadastro de Exames</a></h3>
+                                <div>
+                                      <%@include  file="pesquisa_cpf.jspf" %>
+                                    <%@include  file="conteudo_gestacao_cadastro_exame.jspf" %>
+                                </div>
+                            </div>	  
+                        </div>                                
+</div>
+                    
+         
