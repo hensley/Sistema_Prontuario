@@ -1,0 +1,63 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SECRETARIA MUNICIPAL DE SAÚDE - NINHEIRA</title>
+<link href="index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery/jquery.js"></script>
+<script type="text/javascript" src="jquery/jquery.maskedinput-1.1.4.pack.js"/></script>
+<script type="text/javascript">
+
+$(function(){
+	$('.dropdown').mouseenter(function(){
+		$('.sublinks').stop(false, true).hide();
+	
+		var submenu = $(this).parent().next();
+
+		submenu.css({
+			position:'absolute',
+			top: $(this).offset().top + $(this).height() + 'px',
+			left: $(this).offset().left + 'px',
+			zIndex:1000
+		});
+		
+		submenu.stop().slideDown(300);
+		
+		submenu.mouseleave(function(){
+			$(this).slideUp(300);
+		});
+	});
+});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#telefone").mask("(99)9999-9999");
+		$("#cpf").mask("999.999.999-99");
+		$("#cep").mask("99999-999");
+		$("#data_cadastro").mask("99/99/9999");
+		$("#data_nascimento").mask("99/99/9999");
+		$("#idade").mask("999");
+	});
+</script>
+
+
+</head>
+
+<body>
+	<div id="fundo_pagina"> 
+    
+    	<div id="geral">
+        
+            <div id="topo">
+                <img src="imagens/topo_sem_menu.gif" width="998" height="200" alt="imagem topo index" />
+                </div>
+                
+         
+                 
+            <div id="conteudo">
+				<img src="imagens/inicio_conteudo.gif" width="998" height="44" alt="imagem inicio conteudo"  />
+

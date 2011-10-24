@@ -1,0 +1,26 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<div id="login_inicial">
+    	<img src="imagens/imagemlogin.gif" width="247" height="318" alt="imagem pagina inicial" />
+        <% String erro = (String)request.getAttribute("erro");
+        if(erro !=null){
+                   %><p>Atencao!<%=erro %></p><%
+        }
+        %>
+        <form method="post" action="/login">
+        	<table width="200" border="0">
+                  <tr>
+                    <td width="40">Login:</td>
+                    <td width="250"><input type="text" name="usuario" id="usuario" /></td>
+                  </tr>
+                  <tr>
+                    <td>Senha:</td>
+                    <td><input type="password" name="senha" id="senha" /></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td align="right"><input type="submit" name="entrar" id="entrar" value="Entrar" /></td>
+                  </tr>
+			</table>
+        </form>
+    </div>

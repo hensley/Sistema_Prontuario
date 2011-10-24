@@ -1,0 +1,82 @@
+<%-- 
+    Document   : posto
+    Created on : 08/09/2011, 20:39:22
+    Author     : Pablo
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="domainModel.Familia" %>
+<%@ page import="domainModel.Consulta" %>
+
+
+
+<%@include  file="jspf/topo_menu_principal.jspf" %>
+
+<div id="cadastro_paciente">
+      <%
+			Familia familia = (Familia)request.getAttribute("cadastro_paciente");
+		%>
+
+                                  
+                                  
+                                  
+                <form action="/cadastro_paciente" method="post">
+            <p><h1 align="center">Cadastro de Pacientes </h1></p>
+			<form>
+                <table width="80%" height="300" border="0" align="center">
+                        <td align="right">Nome:</td>
+                        <td><input type="text" name="nome" id="nome" /></td>   
+                        <td align="right">Data Nascimento:</td>
+                        <td><input type="text" name="data_nascimento" id="data_nascimento" /></td>
+                        <td align="right">Cpf:</td>
+                        <td><input type="text" name="cpf" id="cpf" /></td>
+                         <td align="right">Profissao:</td>
+                        <td><input type="text" name="profissao" id="profissao" /></td>
+                       
+                        
+                       
+                           
+                        <td width="10%">&nbsp;</td>
+                      </tr>
+                      <tr>
+                      <tr>
+                        <td width="15%" align="right">Logradouro:</td>
+                        <td width="33%"><input type="text" name="logradouro" id="logradouro" /></td>
+                        <td width="12%" align="right">Bairro:</td>
+                        <td width="30%"><input type="text" name="bairro" id="bairro" /></td>
+                          <td align="right">Numero:</td>
+                        <td><input type="text" name="numero" id="numero" /></td>
+                        <td align="right">Complemento:</td>
+                        <td><input type="text" name="complemento" id="complemento" /></td>
+                        <td width="10%">&nbsp;</td>
+                      </tr>
+                      <tr>
+                      
+                    
+                        <td align="right">Sexo:</td>
+                        <td><input type="text" name="sexo" id="sexo" /></td>  
+                        <td align="right">Cep:</td>
+                        <td><input type="text" name="cep" id="cep" /></td>
+                        <td align="right">Cidade:</td>
+                        <td><input type="text" name="cidade" id="cidade" /></td>
+                         <td align="right">Data de Cadastro:</td>
+                        <td><input type="text" name="data_cadastro" id="data_cadastro" /></td>
+                        <td width="10%">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><input type="reset" name="limpar" id="limpar" value="Limpar Formulario" /></td>
+                        <td><input type="submit" name="Save"  value="Salvar" /></td>
+                      </tr>
+                    </table>
+                 </form>
+              </div>   
+<%@include  file="jspf/rodape_fim_conteudo.jspf" %>

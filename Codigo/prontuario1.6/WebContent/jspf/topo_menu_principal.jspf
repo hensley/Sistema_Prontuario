@@ -1,0 +1,131 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SECRETARIA MUNICIPAL DE SAÚDE - NINHEIRA</title>
+
+<link href="index.css" rel="stylesheet" type="text/css" />
+<link  href="css/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+
+
+
+<script type="text/javascript" src="jquery/jquery.msAccordion.js"></script>
+
+<script type="text/javascript" src="jquery/jquery.js"></script>
+<script type="text/javascript" src="jquery/jquery.maskedinput-1.1.4.pack.js"/></script>
+<script type="text/javascript" src="jquery/jquery-ui-1.8.16.custom.min.js"/></script>
+<script type="text/javascript" src="jquery/jquery.ui.datepicker-pt-BR.js"/></script>
+
+
+<script type="text/javascript">
+$(function(){
+	// datas
+	$("#data").datepicker($.datepicker.regional["pt-BR"]);
+	$("#data_aplicacao").datepicker($.datepicker.regional["pt-BR"]);
+	$("#data_cadastro").datepicker($.datepicker.regional["pt-BR"]);
+        $("#data_consulta").datepicker($.datepicker.regional["pt-BR"]);
+	
+	
+	
+	// abas	   
+    $("#abas_gestacao_cadastro_consultas_exames").tabs();
+    $("#abas_vacinacao_cadastrocrianca_vacina").tabs();
+    $("#abas_preventivo").tabs();
+
+	
+	//$("#gestacao_cadastros").accordion({ header: "h3" });
+	//$("#gestacao_consultas").accordion({ header: "h3" });
+	//$("#gestacao_exames").accordion({ header: "h3" });
+	//						   $("#gestacao_consultas").msAccordion({header: "h3", vertical:true});
+	
+	
+	
+	//menu principal
+	$('.dropdown').mouseenter(function(){
+		$('.sublinks').stop(false, true).hide();
+	
+		var submenu = $(this).parent().next();
+
+		submenu.css({
+			position:'absolute',
+			top: $(this).offset().top + $(this).height() + 'px',
+			left: $(this).offset().left + 'px',
+			zIndex:1000
+		});
+		
+		submenu.stop().slideDown(300);
+		
+		submenu.mouseleave(function(){
+			$(this).slideUp(300);
+		});
+	});
+});
+	// mascaras
+	$(document).ready(function(){
+		$("#telefone").mask("(99)9999-9999");
+		$("#cpf").mask("999.999.999-99");
+		$("#cep").mask("99999-999");
+		$("#data_cadastro").mask("99/99/9999");
+		$("#data_nascimento").mask("99/99/9999");
+		$("#idade").mask("999");
+		$("#data_nascimento_crianca").mask("99/99/9999");
+		
+	});
+</script>
+
+
+
+
+</head>
+
+<body>
+	<div id="fundo_pagina"> 
+    
+    	<div id="geral">
+        
+       		<div id="topo">
+            	<div id="menu">
+					<div id="menu_completo">
+						<ul>
+							<li><a href="" class="dropdown">Cadastro</a></li>
+							<li class="sublinks">
+                                                                <a href="cadastro_paciente.jsp">Paciente</a>
+							</li>
+						</ul>
+							<ul>
+								<li><a href="" class="dropdown">Gestação</a></li>
+                                                                <li class="sublinks">
+								<a href="gestacao_cadastro.jsp">Cadastro de Gestante</a>
+                                                                <a href="gestacao_consulta.jsp">Consultas</a>
+                                                                <a href="gestacao_exame.jsp">Exames</a>
+                                                                </li>
+							</ul>
+						<ul>
+								<li><a href="" class="dropdown">Vacinação</a></li>
+                                                                <li class="sublinks">
+								<a href="vacinacao_cadastro.jsp">Cadastro de Criança</a>
+                                                                <a href="vacinacao_vacina.jsp">Vacinas</a>
+                                                                </li>
+						</ul>
+                                            	<ul>
+								<li><a href="" class="dropdown">Preventivo</a></li>
+                                                                <li class="sublinks">
+								<a href="preventivo_coleta.jsp">Cadastro de Coleta</a>
+                                                                </li>
+						</ul>
+
+				  </div>
+							<div id="menu_posto">
+							</div>
+							<div id="menu_login">
+							</div>
+                </div>
+                
+            </div> 
+                 
+            <div id="conteudo">
+				<img src="imagens/inicio_conteudo.gif" width="998" height="44" alt="imagem inicio conteudo"  />
+
+
